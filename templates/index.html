@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>My App</title>
+</head>
+<body>
+    <div class="container">
+        <header class="heading">MongoDB With Django  Major Project</header>
+
+        <nav>
+            <ul class="activenav"><a href="/">Insert Data</a></ul>
+            <ul><a href="/showdata/">Show Data</a></ul>
+        </nav>
+
+        <form action="/" method="post">
+        {% csrf_token %}
+        <div class="enterdata box">
+            <div class="fieldline">
+                <div><label for="fname">First Name</label><input type="text" class="inputfield longfield" id="fname" name="fname" placeholder="First Name" required></div> 
+            </div>
+            <div class="fieldline">
+                <div><label for="lname">Last Name</label><input type="text" class="inputfield longfield" id="lname" name="lname" placeholder="Last Name" required></div>
+            </div>
+            <div class="fieldline">
+                <div><label for="age">Age : </label><input type="number" class="inputfield longfield" name="age" min="10" id="age" required></div> 
+            </div>
+            <div class="fieldline">
+                <div><label for="location">Location : </label><textarea class="longfield" name="location" id="location" cols="30" rows="10" required></textarea></div> 
+            </div>
+            <div class="fieldline">
+                <div><input id="insertbtn" class="longfield" type="submit" value="Insert Data"></div> 
+            </div>
+        </div>
+        </form>
+
+    </div>
+</body>
+</html>

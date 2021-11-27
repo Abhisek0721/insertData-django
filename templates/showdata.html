@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>My App</title>
+</head>
+<body>
+    <div class="container">
+        <header class="heading">MongoDB With Django  Major Project</header>
+
+        <nav>
+            <ul><a href="/">Insert Data</a></ul>
+            <ul class="activenav"><a href="/showdata/">Show Data</a></ul>
+        </nav>
+
+        <div class="enterdata box" style="border-radius: 4px;">
+            <table>
+                <tr class="table-heading">
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Age</th>
+                  <th>Location</th>
+                </tr>
+                {% for d in data %}
+                <tr class="table-content">
+                  <td>{{d.firstName}}</td>
+                  <td>{{d.lastName}}</td>
+                  <td>{{d.Age}}</td>
+                  <td>{{d.Location}}</td>
+                </tr>
+                {% endfor %}
+              </table>
+        </div>
+
+    </div>
+</body>
+</html>
